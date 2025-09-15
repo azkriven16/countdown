@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NavbarDemo } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import TargetCursor from "@/components/ui/target-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
         >
           <NavbarDemo />
           {children}
+          <TargetCursor hideDefaultCursor={false} />
         </ThemeProvider>
       </body>
     </html>

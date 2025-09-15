@@ -73,7 +73,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn(
-        "sticky inset-x-0 top-0 lg:top-2.5 z-40 w-full bg-transparent",
+        "fixed inset-x-0 top-0 lg:top-2.5 z-40 w-full bg-transparent",
         className
       )}
     >

@@ -2,7 +2,6 @@
 
 import { fadeInUp } from "@/animation/fade-in-up";
 import { Countdown } from "@/components/countdown";
-import { ParticlesDemo } from "@/components/particles";
 import { Button } from "@/components/ui/button";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { Highlighter } from "@/components/ui/highlighter";
@@ -15,7 +14,7 @@ import { motion } from "motion/react";
 export default function Page() {
   return (
     <div className="min-h-screen w-full bg-background text-foreground relative">
-      <HeroHighlight className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 relative">
+      <HeroHighlight className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 relative mt-10">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold text-center leading-tight sm:leading-tight md:leading-snug lg:leading-snug">
           <motion.span variants={fadeInUp} initial="hidden" animate="visible">
             Get Ready for Something
@@ -46,14 +45,14 @@ export default function Page() {
                 name="email"
                 required
                 placeholder="Enter your email address"
-                className="h-16 sm:h-20 text-xl sm:text-2xl placeholder:text-lg sm:placeholder:text-2xl px-4 sm:px-6 rounded-2xl"
+                className="h-16 sm:h-20 text-xl sm:text-2xl placeholder:text-lg sm:placeholder:text-2xl px-4 sm:px-6 rounded-2xl cursor-target"
               />
             </div>
 
             <Button
               type="submit"
               variant="default"
-              className="w-full sm:w-auto h-16 sm:h-20 px-6 sm:px-10 text-xl sm:text-2xl font-semibold rounded-2xl"
+              className="w-full sm:w-auto h-16 sm:h-20 px-6 sm:px-10 text-xl sm:text-2xl font-semibold rounded-2xl cursor-target"
             >
               Get Early Updates
             </Button>
@@ -71,8 +70,8 @@ export default function Page() {
       </HeroHighlight>
 
       <Particles
-        className="absolute inset-0 z-0"
-        quantity={500}
+        className="absolute inset-0 z-0 hidden lg:block"
+        quantity={250}
         ease={40}
         color="#ffffff"
         refresh
