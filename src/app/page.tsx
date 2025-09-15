@@ -1,103 +1,73 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { fadeInUp } from "@/animation/fade-in-up";
+import { Countdown } from "@/components/countdown";
+import { Button } from "@/components/ui/button";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
+import { Highlighter } from "@/components/ui/highlighter";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { TextEffect } from "@/components/ui/text-effect";
+import { motion } from "motion/react";
+
+export default function Page() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen w-full bg-background text-foreground">
+      <HeroHighlight className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold text-center leading-tight sm:leading-tight md:leading-snug lg:leading-snug">
+          <motion.span variants={fadeInUp} initial="hidden" animate="visible">
+            Get Ready for Something
+          </motion.span>
+          <br />
+          <motion.span variants={fadeInUp} initial="hidden" animate="visible">
+            <Highlighter action="highlight" color="#F9A825">
+              <Highlighter action="box" color="#FFFF00" strokeWidth={2}>
+                Extraordinary!
+              </Highlighter>
+            </Highlighter>
+          </motion.span>
+        </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Countdown />
+
+        <div className="w-full max-w-4xl flex flex-col items-center gap-6">
+          <TextEffect
+            per="line"
+            delay={0.8}
+            preset="fade-in-blur"
+            className="text-sm sm:text-base md:text-xl text-muted-foreground font-medium text-center leading-relaxed px-2 text-balance mb-2"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Give me a heads-up when it&apos;s ready. No spam, no pressure.
+            Unsubscribe anytime.
+          </TextEffect>
+          <form
+            onSubmit={() => {}}
+            className="w-full max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4 p-4 shadow-2xl rounded-3xl bg-secondary"
           >
-            Read our docs
-          </a>
+            <div className="w-full sm:flex-1">
+              <Label htmlFor="email" className="sr-only">
+                Email address
+              </Label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter your email address"
+                className="h-16 sm:h-20 text-xl sm:text-2xl placeholder:text-lg sm:placeholder:text-2xl px-4 sm:px-6 rounded-2xl"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              variant="default"
+              className="w-full sm:w-auto h-16 sm:h-20 px-6 sm:px-10 text-xl sm:text-2xl font-semibold rounded-2xl"
+            >
+              Get Early Updates
+            </Button>
+          </form>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </HeroHighlight>
     </div>
   );
 }
