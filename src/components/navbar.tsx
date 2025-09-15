@@ -1,17 +1,16 @@
 "use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
 import {
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
   Navbar,
+  NavbarButton,
+  NavbarLogo,
   NavBody,
   NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
+import { useState } from "react";
 
 export function NavbarDemo() {
   const navItems = [
