@@ -22,7 +22,7 @@ export default function Page() {
           initial="hidden"
           animate="visible"
           className={cn(
-            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-5"
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-foreground hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-5"
           )}
         >
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:duration-300">
