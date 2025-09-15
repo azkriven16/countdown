@@ -31,15 +31,6 @@ export default function Page() {
         <Countdown />
 
         <div className="w-full max-w-4xl flex flex-col items-center gap-6">
-          <TextEffect
-            per="line"
-            delay={0.8}
-            preset="fade-in-blur"
-            className="text-sm sm:text-base md:text-xl text-muted-foreground font-medium text-center leading-relaxed px-2 text-balance mb-2"
-          >
-            Give me a heads-up when it&apos;s ready. No spam, no pressure.
-            Unsubscribe anytime.
-          </TextEffect>
           <form
             onSubmit={() => {}}
             className="w-full max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4 p-4 shadow-2xl rounded-3xl bg-secondary"
@@ -66,6 +57,15 @@ export default function Page() {
               Get Early Updates
             </Button>
           </form>
+          <TextEffect
+            per="line"
+            delay={0.8}
+            preset="fade-in-blur"
+            className="text-sm sm:text-base md:text-xl text-muted-foreground font-medium text-center leading-relaxed px-2 text-balance mb-2"
+          >
+            Give me a heads-up when it&apos;s ready. No spam, no pressure.
+            Unsubscribe anytime.
+          </TextEffect>
         </div>
       </HeroHighlight>
     </div>
