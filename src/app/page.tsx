@@ -8,7 +8,6 @@ import { Highlighter } from "@/components/ui/highlighter";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Particles } from "@/components/ui/particles";
-import { AnimatedShinyText } from "@/components/ui/shiny-text";
 import { TextEffect } from "@/components/ui/text-effect";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
@@ -22,12 +21,12 @@ export default function Page() {
           initial="hidden"
           animate="visible"
           className={cn(
-            "group rounded-full border border-black/5 bg-neutral-100 text-base text-foreground hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-5"
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-foreground hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-2"
           )}
         >
-          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:duration-300">
-            <span className="animate-pulse mr-2">✨</span> Newest Product Launch
-          </AnimatedShinyText>
+          <div className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:duration-300">
+            ✨ Newest Product Launch
+          </div>
         </motion.div>
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold text-center leading-tight sm:leading-tight md:leading-snug lg:leading-snug">
           <TextEffect per="char" preset="fade-in-blur" className="inline-block">
